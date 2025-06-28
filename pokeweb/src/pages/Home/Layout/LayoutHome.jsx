@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import css from "./layout.module.css";
 import Header from '../../../components/Header/Header';
 import Footer from '../../../components/Footer/Footer';
-import PokemonList from '../Pokemon/PokemonList';
+import PokemonList from '../pokemon/PokemonList';
 import PokemonDetail from '../../PokemonDetail/PokemonDetail';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
