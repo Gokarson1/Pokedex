@@ -15,7 +15,7 @@ export default function MisEquipos() {
 
     const fetchTeams = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/teams`, {
+        const res = await axios.get(`http:pokedex-api-hpim.onrender.com/api/teams`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +33,7 @@ export default function MisEquipos() {
 
   const handleDelete = async (teamId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/teams/delete/${teamId}`, {
+      await axios.delete(`http://pokedex-api-hpim.onrender.com/api/teams/delete/${teamId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,7 +50,7 @@ export default function MisEquipos() {
     setCreating(true);
     try {
       const res = await axios.post(
-        `http://localhost:3001/api/teams/create`,
+        `http://pokedex-api-hpim.onrender.com/api/teams/create`,
         {
           name: newTeamName,
           userId: user.id,
@@ -116,7 +116,7 @@ export default function MisEquipos() {
                             onClick={async () => {
                               try {
                                 await axios.delete(
-                                  `http://localhost:3001/api/teams/remove/${team._id}/${poke._id}`,
+                                  `http://pokedex-api-hpim.onrender.com/api/teams/remove/${team._id}/${poke._id}`,
                                   {
                                     headers: { Authorization: `Bearer ${token}` },
                                   }

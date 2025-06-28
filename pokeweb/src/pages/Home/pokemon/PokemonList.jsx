@@ -13,7 +13,7 @@ export default function PokemonList({ pokemons,onSearch }) {
 
     const fetchPokemons = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/pokemon?page=${page}&limit=20`);
+        const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/pokemon?page=${page}&limit=20`);
         setFetchedPokemons(res.data);
       } catch (err) {
         console.error("Error fetching pokemons:", err);

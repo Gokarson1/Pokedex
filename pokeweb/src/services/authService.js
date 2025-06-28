@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api/users";
+const API_URL = "https://pokedex-api-hpim.onrender.com/api/users";
 
 export const login = async (email, password) => {
   const res = await fetch(`${API_URL}/login`, {

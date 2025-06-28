@@ -15,7 +15,7 @@ export default function Favoritos() {
 
     const fetchFavorites = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/favorites/${user.id}`, {
+        const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/favorites/${user.id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +33,7 @@ export default function Favoritos() {
 
   const handleRemove = async (pokemonId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/favorites/remove/${user.id}/${pokemonId}`, {
+      await axios.delete(`https://pokedex-api-hpim.onrender.com/api/favorites/remove/${user.id}/${pokemonId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

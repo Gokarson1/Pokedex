@@ -18,7 +18,7 @@ export default function LayoutHome() {
 
   useEffect(() => {
     const fetchNames = async () => {
-      const res = await axios.get("http://localhost:3001/api/pokemon-names");
+      const res = await axios.get("https://pokedex-api-hpim.onrender.com/api/pokemon-names");
       setAllNames(res.data);
     };
     fetchNames();
