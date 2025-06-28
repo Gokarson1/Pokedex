@@ -1,0 +1,77 @@
+/* Colores por tipo */
+.tipo-fire {
+  background: linear-gradient(135deg, #f44336, #ff9800);
+}
+
+.tipo-water {
+  background: linear-gradient(135deg, #2196f3, #03a9f4);
+}
+
+.tipo-grass {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+}
+
+.tipo-electric {
+  background: linear-gradient(135deg, #fdd835, #fbc02d);
+  color: black;
+}
+
+.tipo-psychic {
+  background: linear-gradient(135deg, #ec407a, #ab47bc);
+}
+
+.tipo-ice {
+  background: linear-gradient(135deg, #81d4fa, #4dd0e1);
+}
+
+.tipo-ground {
+  background: linear-gradient(135deg, #a1887f, #8d6e63);
+}
+
+.tipo-rock {
+  background: linear-gradient(135deg, #795548, #a1887f);
+}
+
+.tipo-dark {
+  background: linear-gradient(135deg, #616161, #424242);
+}
+
+.tipo-fairy {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+  color: black;
+}
+
+.tipo-dragon {
+  background: linear-gradient(135deg, #1976d2, #512da8);
+}
+
+.tipo-poison {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
+.tipo-fighting {
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+}
+
+.tipo-ghost {
+  background: linear-gradient(135deg, #7e57c2, #5e35b1);
+}
+
+.tipo-bug {
+  background: linear-gradient(135deg, #8bc34a, #aed581);
+  color: black;
+}
+
+.tipo-steel {
+  background: linear-gradient(135deg, #b0bec5, #78909c);
+  color: black;
+}
+
+.tipo-flying {
+  background: linear-gradient(135deg, #90caf9, #64b5f6);
+}
+
+.tipo-normal {
+  background: linear-gradient(135deg, #bdbdbd, #e0e0e0);
+  color: black;
+}

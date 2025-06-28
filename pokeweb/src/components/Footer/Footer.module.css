@@ -1,0 +1,29 @@
+
+.footer {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.div_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo img {
+  max-height: 50px;
+  width: auto;
+  /* filter: brightness(0) invert(1); */
+}
+
+/* 📱 Responsivo */
+@media (min-width: 768px) {
+  .div_footer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
