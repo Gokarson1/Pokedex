@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import css from './PokemonDetail.module.css';
 import pokeball from '../../assets/pokebola.png';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 export default function PokemonDetail() {
   const { name } = useParams();
@@ -57,7 +59,7 @@ export default function PokemonDetail() {
     const checkFavorite = async () => {
       if (!user || !pokemon) return;
       try {
-        const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/favorites/${user.id}`, {
+        const res = await axios.get(`${API_URL}/api/favorites/${user.id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const found = res.data.find((p) => p.id === pokemon.id);
@@ -74,7 +76,7 @@ export default function PokemonDetail() {
 
   const fetchTeams = async () => {
     try {
-      const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/teams`, {
+      const res = await axios.get(`${API_URL}/api/teams`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTeams(res.data);
@@ -92,7 +94,7 @@ const handleAddToTeam = async () => {
   }
   try {
     await axios.post(
-      `https://pokedex-api-hpim.onrender.com/api/teams/add/${selectedTeam}`,
+      `${API_URL}/api/teams/add/${selectedTeam}`,
       {
         name: pokemon.name,
         id: pokemon.id,
@@ -113,7 +115,7 @@ const handleAddToTeam = async () => {
 
     try {
       await axios.post(
-        `https://pokedex-api-hpim.onrender.com/api/favorites/add/${user.id}`,
+        `${API_URL}/api/favorites/add/${user.id}`,
         {
           name: pokemon.name,
           id: pokemon.id,

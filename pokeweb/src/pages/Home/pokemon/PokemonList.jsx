@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
 import css from './Pokemon.module.css';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function PokemonList({ pokemons,onSearch }) {
   const [page, setPage] = useState(1);
@@ -13,7 +14,7 @@ export default function PokemonList({ pokemons,onSearch }) {
 
     const fetchPokemons = async () => {
       try {
-        const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/pokemon?page=${page}&limit=20`);
+        const res = await axios.get(`${API_URL}/api/pokemon?page=${page}&limit=20`);
         setFetchedPokemons(res.data);
       } catch (err) {
         console.error("Error fetching pokemons:", err);

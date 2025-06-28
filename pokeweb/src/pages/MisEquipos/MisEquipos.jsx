@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./MisEquipos.module.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function MisEquipos() {
   const [teams, setTeams] = useState([]);
@@ -9,13 +10,14 @@ export default function MisEquipos() {
   const [creating, setCreating] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("token");
+  
 
   useEffect(() => {
     if (!user) return;
 
     const fetchTeams = async () => {
       try {
-        const res = await axios.get(`http:pokedex-api-hpim.onrender.com/api/teams`, {
+        const res = await axios.get(`${API_URL}/api/teams`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +35,7 @@ export default function MisEquipos() {
 
   const handleDelete = async (teamId) => {
     try {
-      await axios.delete(`http://pokedex-api-hpim.onrender.com/api/teams/delete/${teamId}`, {
+      await axios.delete(`${API_URL}/api/teams/delete/${teamId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,7 +52,7 @@ export default function MisEquipos() {
     setCreating(true);
     try {
       const res = await axios.post(
-        `http://pokedex-api-hpim.onrender.com/api/teams/create`,
+        `${API_URL}/api/teams/create`,
         {
           name: newTeamName,
           userId: user.id,
@@ -116,7 +118,7 @@ export default function MisEquipos() {
                             onClick={async () => {
                               try {
                                 await axios.delete(
-                                  `http://pokedex-api-hpim.onrender.com/api/teams/remove/${team._id}/${poke._id}`,
+                                  `${API_URL}/api/teams/remove/${team._id}/${poke._id}`,
                                   {
                                     headers: { Authorization: `Bearer ${token}` },
                                   }

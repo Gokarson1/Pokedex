@@ -10,6 +10,8 @@ import AuthPage from '../../AuthPage/AuthPage'
 import MisEquipos from '../../MisEquipos/MisEquipos';
 import Favoritos from '../../Favoritos/Favoritos';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 
 export default function LayoutHome() {
@@ -18,7 +20,8 @@ export default function LayoutHome() {
 
   useEffect(() => {
     const fetchNames = async () => {
-      const res = await axios.get("https://pokedex-api-hpim.onrender.com/api/pokemon-names");
+      const res = await axios.get(`${API_URL}/api/pokemon-names`);
+      
       setAllNames(res.data);
     };
     fetchNames();

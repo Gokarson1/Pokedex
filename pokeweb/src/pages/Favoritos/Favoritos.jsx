@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Favoritos.module.css"; // 👈 Importa el CSS
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Favoritos() {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ export default function Favoritos() {
 
     const fetchFavorites = async () => {
       try {
-        const res = await axios.get(`https://pokedex-api-hpim.onrender.com/api/favorites/${user.id}`, {
+        const res = await axios.get(`${API_URL}/api/favorites/${user.id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +35,7 @@ export default function Favoritos() {
 
   const handleRemove = async (pokemonId) => {
     try {
-      await axios.delete(`https://pokedex-api-hpim.onrender.com/api/favorites/remove/${user.id}/${pokemonId}`, {
+      await axios.delete(`${API_URL}/api/favorites/remove/${user.id}/${pokemonId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
